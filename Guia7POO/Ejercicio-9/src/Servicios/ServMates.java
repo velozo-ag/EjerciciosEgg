@@ -22,15 +22,36 @@ import java.util.Scanner;
 public class ServMates {
     
     Scanner input = new Scanner(System.in);
-    Matematica mate1 = new Matematica();
     
-    
-    
-    
-    public void devolverMayor(Matematica mate1){
+    public Matematica altaMates(){
         
-               
+        Matematica mate1 = new Matematica();
+        
+        System.out.print("Ingrese el primer numero entero: \n > ");
+        mate1.setNum1(input.nextInt());
+        
+        System.out.print("Ingrese el segundo numero entero: \n > ");
+        mate1.setNum2(input.nextInt());
+        
+        return mate1;
+        
     }
-    jkldsa
     
+    public int devolverMayor(Matematica mate1){
+        
+        int num1 = mate1.getNum1();
+        int num2 = mate1.getNum2();
+        
+        if(num1 > num2){
+            
+            return num1;
+
+        }else{
+
+            return num2;
+            
+        }
+        
+    }
+   
 }

@@ -93,10 +93,11 @@ public class ServCadena {
         int i;
         int contador = 0;
         String letra;
+        String cadena = cadena1.getFrase();
         
         for(i = 0; i < cadena1.getLongitud(); i++){
             
-            letra = cadena1.getFrase().substring(i).toLowerCase();
+            letra = cadena.substring(i,i+1).toLowerCase();
             
             if(letra.equals(caracter)){
                 
@@ -137,7 +138,7 @@ public class ServCadena {
         
         for(i = 0; i < cadena1.getLongitud(); i++){
             
-            let = cadena1.getFrase().substring(i).toLowerCase();
+            let = cadena1.getFrase().substring(i,i+1).toLowerCase();
             
             if("a".equals(let)){
                 

@@ -24,10 +24,13 @@ public class ServMates {
     Scanner input = new Scanner(System.in);
     Matematica mate1 = new Matematica();
     
+    
+    
+    
     public void devolverMayor(Matematica mate1){
         
-        
-        
+               
     }
+    jkldsa
     
 }

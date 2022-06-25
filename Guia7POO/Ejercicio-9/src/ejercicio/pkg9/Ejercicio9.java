@@ -12,6 +12,8 @@
  */
 
 package ejercicio.pkg9;
+import Entidades.Matematica;
+import Servicios.ServMates;
 
 /**
  * @author Agus
@@ -21,7 +23,12 @@ public class Ejercicio9 {
 
     public static void main(String[] args) {
 
+        ServMates sM = new ServMates();
+        Matematica maths = sM.altaMates();
 
+        sM.devolverMayor(maths);
+        sM.calcularPotencia(maths);
+        sM.calcularRaiz(maths);
 
     }
     

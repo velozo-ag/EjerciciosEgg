@@ -37,21 +37,66 @@ public class ServMates {
         
     }
     
-    public int devolverMayor(Matematica mate1){
+    public void devolverMayor(Matematica mate1){
         
         int num1 = mate1.getNum1();
         int num2 = mate1.getNum2();
         
         if(num1 > num2){
             
-            return num1;
+            System.out.println(num1);
 
         }else{
 
-            return num2;
+            System.out.println(num2);
             
         }
         
     }
+
+    public void calcularPotencia(Matematica mate1){
+
+        int num1 = mate1.getNum1();
+        int num2 = mate1.getNum2();
+        int potencia;
+
+        if(num1 > num2){
+            
+            potencia = (int)Math.pow(num1, num2);
+
+            System.out.println(num1 + " elevado a " + num2 + " es igual a: " + potencia);
+
+        }else{
+
+            potencia = (int)Math.pow(num2, num1);
+
+            System.out.println(num2 + " elevado a " + num1 + " es igual a: " + potencia);
+            
+        }
+        
+    }
+
+    public void calcularRaiz(Matematica mate1){
+
+        int num1 = mate1.getNum1();
+        int num2 = mate1.getNum2();
+        int absoluto;
+
+        if(num1 < num2){
+
+            absoluto = Math.abs(num1);
+
+            System.out.println("La raiz cuadrada de " + num1 + " es: " + Math.sqrt(absoluto));
+            
+        } else {
+            
+            absoluto = Math.abs(num2);
+
+            System.out.println("La raiz cuadrada de " + num2 + " es: " + Math.sqrt(absoluto));
+            
+        }
+
+    }
+
    
 }

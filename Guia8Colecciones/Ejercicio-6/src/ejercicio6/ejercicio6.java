@@ -9,7 +9,6 @@
 */
 
 package ejercicio6;
-import Entidades.Producto;
 import Servicios.ServTienda;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -21,29 +20,17 @@ public class ejercicio6 {
     public static void main(String[] args) {
     
         ServTienda sT = new ServTienda();
-        HashMap<Integer, Producto> tienda = sT.llenarTienda();
-        String seguir;
-        Integer op;
+        HashMap<String, Integer> tienda = sT.llenarTienda();
+        Integer op = 0;
 
-        seguir = preguntar();
-        
-        while(!seguir.equals("n")){
+        while(op != 5){
 
             mostrarMenu();
             op = ingresarOpcion();
             realizarOperacion(op, tienda, sT);
 
-            seguir = preguntar();
-
         }
 
-    }
-
-    public static String preguntar(){
-
-        System.out.print("Desea realizar otra operacion? s/n \n > ");
-        return input.next().toLowerCase();
-        
     }
 
     public static void mostrarMenu(){
@@ -63,7 +50,7 @@ public class ejercicio6 {
 
     }
 
-    public static void realizarOperacion(Integer op, HashMap<Integer, Producto> tienda, ServTienda sT){
+    public static void realizarOperacion(Integer op, HashMap<String, Integer> tienda, ServTienda sT){
 
         switch(op){
             case 1:
@@ -79,10 +66,10 @@ public class ejercicio6 {
                 sT.mostrarProductos(tienda);
                 break;
             case 5:
-                System.out.println("Saliendo...");
+                System.out.println("\n  Saliendo...");
                 break;
             default:
-                System.out.println("Numero erroneo...");
+                System.out.println("\n  Numero erroneo...");
                 break;
         }
 

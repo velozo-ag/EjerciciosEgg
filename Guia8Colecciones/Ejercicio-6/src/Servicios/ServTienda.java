@@ -10,30 +10,13 @@
 
 package Servicios;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import Entidades.Producto;
 
 public class ServTienda {
 
     Scanner input = new Scanner(System.in);
     Integer count = 0;
     
-    public Producto crearProducto(){
-
-        Producto product = new Producto();
-
-        System.out.print("Ingrese el produto: \n > ");
-        product.setTipo(input.next());
-
-        System.out.print("Ingrese el precio del producto: \n > ");
-        product.setPrecio(input.nextInt());
-
-
-        return product;
-
-    }
-
     public String preguntar(){
 
         System.out.print("Desea ingresar un producto? s/n \n > ");
@@ -41,22 +24,24 @@ public class ServTienda {
         
     }
 
-    public HashMap<Integer, Producto> llenarTienda(){
+    public HashMap<String, Integer> llenarTienda(){
 
-        HashMap<Integer, Producto> tienda = new HashMap<>();
-        Producto product = new Producto();
+        HashMap<String, Integer> tienda = new HashMap<>();
         String seguir;
+        String nombre;
+        Integer precio;
         
         seguir = preguntar();
 
         while(!seguir.equals("n")){
 
-            product = crearProducto();
+            System.out.print("  Ingrese el produto: \n > ");
+            nombre = input.next();
+            System.out.print("  Ingrese el precio del producto: \n > ");
+            precio = input.nextInt();
 
-            tienda.put(count, product);
+            tienda.put(nombre, precio);
             
-            count++;
-
             seguir = preguntar();
         
         }
@@ -65,59 +50,66 @@ public class ServTienda {
 
     }
 
-    public void ingresarUnProducto(HashMap<Integer, Producto> tienda){
+    public void ingresarUnProducto(HashMap<String, Integer> tienda){
+        
+        String nombre;
+        Integer precio;
+        
+        System.out.print("  Ingrese el produto: \n > ");
+        nombre = input.next();
+        System.out.print("  Ingrese el precio del producto: \n > ");
+        precio = input.nextInt();
 
-        Producto product = new Producto();
-
-        product = crearProducto();
-
-        tienda.put(count, product);
-
-        count++;
-
-    }
-
-    public void modificarPrecio(HashMap<Integer, Producto> tienda){
-
-        Integer lugar;
-
-        System.out.print("\nIngrese el lugar del objeto a modificar: \n > ");
-        lugar = input.nextInt();
-
-        System.out.println(tienda.get(lugar));
-
-        System.out.print("Ingrese el nuevo precio: \n > ");
-        tienda.get(lugar).setPrecio(input.nextInt());
-
-        System.out.println(tienda.get(lugar));
-
-    }
-
-    public void eliminarProduto(HashMap<Integer, Producto> tienda){
-
-        String prod;
-
-        System.out.print("\nIngrese el producto a eliminar: \n > ");
-        prod = input.next();
-
-        for (Map.Entry<Integer, Producto> set : tienda.entrySet()) {
-
-            if(set.getValue().getTipo().equals(prod)){
+        tienda.put(nombre, precio);
                 
-                tienda.remove(set.getKey());
+    }
 
-            }
+    public void modificarPrecio(HashMap<String, Integer> tienda){
+
+        String producto;
+
+        System.out.print("\n  Ingrese el producto a modificar: \n > ");
+        producto = input.next();
+
+        if(tienda.containsKey(producto)){
+
+            System.out.println(tienda.get(producto));
+    
+            System.out.print("  Ingrese el nuevo precio: \n > ");
+            tienda.put(producto, input.nextInt());
+    
+            System.out.println(tienda.get(producto));
+        
+        }else if(!tienda.containsKey(producto)){
+
+            System.out.println("  Ese producto no existe.");
 
         }
 
     }
 
-    public void mostrarProductos(HashMap<Integer, Producto> tienda){
+    public void eliminarProduto(HashMap<String, Integer> tienda){
+
+        String aux;
+        System.out.println("  Que producto desea eliminar?");
+        aux = input.next();
+
+        if(tienda.containsKey(aux)){
+
+            tienda.remove(aux);
+    
+            System.out.println("  Producto removido con exito");
+        
+        }
+
+    }
+
+    public void mostrarProductos(HashMap<String, Integer> tienda){
 
         System.out.println();
 
         tienda.entrySet().forEach(
-            entry ->{System.out.println(entry.getKey() + " = " + entry.getValue());
+            entry ->{System.out.println(entry.getKey() + " -> [ $" + entry.getValue() + " ]");
         });
 
         System.out.println();

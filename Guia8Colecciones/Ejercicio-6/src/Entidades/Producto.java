@@ -12,35 +12,35 @@ package Entidades;
 
 public class Producto {
 
-    String tipo;
-    Integer precio;
+    // String tipo;
+    // Integer precio;
 
-    // Constructor
-    public Producto() {
-    }
+    // // Constructor
+    // public Producto() {
+    // }
 
-    public Producto(String tipo, Integer precio) {
-        this.tipo = tipo;
-        this.precio = precio;
-    }
+    // public Producto(String tipo, Integer precio) {
+    //     this.tipo = tipo;
+    //     this.precio = precio;
+    // }
     
-    // Getters and Setters
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public Integer getPrecio() {
-        return precio;
-    }
-    public void setPrecio(Integer precio) {
-        this.precio = precio;
-    }
+    // // Getters and Setters
+    // public String getTipo() {
+    //     return tipo;
+    // }
+    // public void setTipo(String tipo) {
+    //     this.tipo = tipo;
+    // }
+    // public Integer getPrecio() {
+    //     return precio;
+    // }
+    // public void setPrecio(Integer precio) {
+    //     this.precio = precio;
+    // }
 
-    @Override
-    public String toString() {
-        return "Producto [tipo=" + tipo+ ", precio=" + precio + "]";
-    }
+    // @Override
+    // public String toString() {
+    //     return "Producto [tipo=" + tipo+ ", precio=" + precio + "]";
+    // }
 
 }

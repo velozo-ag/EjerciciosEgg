@@ -52,53 +52,65 @@ public class Ejercicio7 {
     
     public static void main(String[] args) {
 
-        ServPersona sPer = new ServPersona();
+        ServPersona sP = new ServPersona();
         
-        int[] IMCPersonas = new int[4]; 
-        boolean[] Mayor = new boolean[4]; 
+        Persona p1 = null;
         
-        float pesoSegunAltura;
+        try{
+            
+            sP.esMayorDeEdad(p1);
+            
+        }catch(Exception e){
         
-        // Persona 1 --------------------------
+            System.out.println("Error bro");
+            
+        }        
         
-        Persona p1 = sPer.crearPersona(); 
-        
-        IMCPersonas[0] = sPer.calcularIMC(p1);
-        Mayor[0] = sPer.esMayorDeEdad(p1);
-        
-        System.out.println("");
-        
-        // Persona 2 --------------------------
-        
-        Persona p2 = sPer.crearPersona(); 
-        
-        IMCPersonas[1] = sPer.calcularIMC(p2);
-        Mayor[1] = sPer.esMayorDeEdad(p2);
-        
-        System.out.println("");
-
-        // Persona 3 --------------------------
-        
-        Persona p3 = sPer.crearPersona(); 
-        
-        IMCPersonas[2] = sPer.calcularIMC(p3);
-        Mayor[2] = sPer.esMayorDeEdad(p3);
-   
-        System.out.println("");
-
-        // Persona 4 --------------------------
-        
-        Persona p4 = sPer.crearPersona(); 
-        
-        IMCPersonas[3] = sPer.calcularIMC(p4);
-        Mayor[3] = sPer.esMayorDeEdad(p4);
-
-        System.out.println("");
-
-        // Porcentajes ------------------------
-        
-        porcentajeEdad(Mayor);
-        porcentajePeso(IMCPersonas);
+//        ServPersona sPer = new ServPersona();
+//        
+//        int[] IMCPersonas = new int[4]; 
+//        boolean[] Mayor = new boolean[4]; 
+//        
+//        // Persona 1 --------------------------
+//        
+//        Persona p1 = sPer.crearPersona(); 
+//        
+//        IMCPersonas[0] = sPer.calcularIMC(p1);
+//        Mayor[0] = sPer.esMayorDeEdad(p1);
+//        
+//        System.out.println("");
+//        
+//        // Persona 2 --------------------------
+//        
+//        Persona p2 = sPer.crearPersona(); 
+//        
+//        IMCPersonas[1] = sPer.calcularIMC(p2);
+//        Mayor[1] = sPer.esMayorDeEdad(p2);
+//        
+//        System.out.println("");
+//
+//        // Persona 3 --------------------------
+//        
+//        Persona p3 = sPer.crearPersona(); 
+//        
+//        IMCPersonas[2] = sPer.calcularIMC(p3);
+//        Mayor[2] = sPer.esMayorDeEdad(p3);
+//   
+//        System.out.println("");
+//
+//        // Persona 4 --------------------------
+//        
+//        Persona p4 = sPer.crearPersona(); 
+//        
+//        IMCPersonas[3] = sPer.calcularIMC(p4);
+//        Mayor[3] = sPer.esMayorDeEdad(p4);
+//
+//        System.out.println("");
+//
+//        // Porcentajes ------------------------
+//        
+//        porcentajeEdad(Mayor);
+//        porcentajePeso(IMCPersonas);
         
     }
     
@@ -128,9 +140,7 @@ public class Ejercicio7 {
         porcentajeMas = (float)(mas * 100) / 4;
         porcentajeIdeal = 100 - porcentajeMas - porcentajeMenos;
         
-        System.out.println("\nPeso ideal: > %" + porcentajeIdeal + 
-                           "\nDesnutricion: > %" + porcentajeMenos + 
-                           "\nSobrepeso: > %" + porcentajeMas);
+        System.out.println("\nPeso ideal: > %" + porcentajeIdeal + "\nDesnutricion: > %" + porcentajeMenos + "\nSobrepeso: > %" + porcentajeMas);
         
     }
     
@@ -151,8 +161,7 @@ public class Ejercicio7 {
 
         porcentajeMayor = (float)(may * 100) / 4;
 
-        System.out.println("Personas Mayor de edad: > %" + porcentajeMayor + 
-                           "\nPersonas Menor de edad: > %" + (100 - porcentajeMayor));
+        System.out.println("Personas Mayor de edad: > %" + porcentajeMayor + "\nPersonas Menor de edad: > %" + (100 - porcentajeMayor));
         
         
     }

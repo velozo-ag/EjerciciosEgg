@@ -23,9 +23,9 @@ public class servFabricante {
             if(codigo == null){
                 throw new Exception("Debe indicar el codigo.");
             }
-            if(dao.buscarPorCodigo(codigo) != null){
-                throw new Exception("Debe indicar un codigo valido.");
-            }
+//            if(dao.buscarPorCodigo(codigo) != null){
+//                throw new Exception("Debe indicar un codigo valido.");
+//            }
             
             Fabricante fabricante = new Fabricante(codigo,nombre);
             dao.guardarFabricante(fabricante);

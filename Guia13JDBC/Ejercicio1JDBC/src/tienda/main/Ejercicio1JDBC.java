@@ -77,14 +77,14 @@ public class Ejercicio1JDBC {
         
         
         
-        sP.mostrarProductos();
-        sP.mostrarProductosEntre120y202();
-        sP.mostrarPortatiles();
-        sP.mostrarMasBarato();
-        sP.crearProducto(32, "NuevoProducto", 130.2, 7);
-        sP.mostrarProductos();
+//        sP.mostrarProductos();
+//        sP.mostrarProductosEntre120y202();
+//        sP.mostrarPortatiles();
+//        sP.mostrarMasBarato();
+//        sP.crearProducto(32, "NuevoProducto", 130.2, 7);
+//        sP.mostrarProductos();
         sF.crearFabricante(10, "NuevoFabricante");
-        sP.modificarProducto(32, "EdicionNuevoProducto", 140.2, 7);
+        sP.modificarProducto(32, "EdicionNuevoProducto", 140.2, 10);
         sP.mostrarProductos();
 
 //        sP.eliminarProductoPorCodigo(32);

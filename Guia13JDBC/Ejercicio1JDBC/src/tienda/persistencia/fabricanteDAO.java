@@ -14,15 +14,15 @@ import tienda.entidades.Fabricante;
 
 public final class fabricanteDAO extends DAO {
     
-    public void guardarFabricante(Fabricante fabricante) throws Exception{
+    public void guardarFabricante(Fabricante fab) throws Exception{
         
          try {
-            if (fabricante == null) {
+            if (fab == null) {
                 throw new Exception("Debe indicar el fabricante");
             }
 
             String sql = "INSERT INTO fabricante (codigo, nombre)"
-                    + "VALUES ( '" + (Integer)fabricante.getCodigo() + "' , '" + fabricante.getNombre() + "' );";
+                    + "VALUES ( '" + fab.getCodigo() + "' , '" + fab.getNombre() + "' );";
 
             insertarModificarEliminar(sql);
         } catch (Exception e) {
